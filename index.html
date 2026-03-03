@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Damodar Subedi - BCA Student Portfolio</title>
+  <link href="https://cdn.tailwindcss.com/3.4.17" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+      color: #e2e8f0;
+    }
+
+    .container-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(100, 116, 139, 0.3);
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: #60a5fa;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #60a5fa;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 60px;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -1px;
+      text-align: left;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .hero-photo {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(96, 165, 250, 0.1));
+      border: 3px solid #3b82f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1.5rem auto;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-photo:hover {
+      transform: scale(1.08);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 0.875rem 2.5rem;
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
+    }
+
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: #f1f5f9;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #60a5fa, #3b82f6);
+      border-radius: 2px;
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 1.75rem;
+      color: #60a5fa;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p {
+      line-height: 1.8;
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .about-highlight {
+      background: rgba(59, 130, 246, 0.1);
+      border-left: 4px solid #3b82f6;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+    }
+
+    .stats-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .stat-card {
+      background: rgba(59, 130, 246, 0.15);
+      border: 2px solid rgba(96, 165, 250, 0.4);
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: #3b82f6;
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      font-weight: 500;
+    }
+
+    .profile-photo {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(96, 165, 250, 0.1));
+      border: 3px solid #3b82f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.05);
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-placeholder {
+      font-size: 6rem;
+      color: #60a5fa;
+      text-align: center;
+    }
+
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-card {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(100, 116, 139, 0.3);
+      padding: 2rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+      border-color: #3b82f6;
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+    }
+
+    .skill-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #60a5fa;
+    }
+
+    .skill-card h3 {
+      font-size: 1.25rem;
+      color: #f1f5f9;
+      margin-bottom: 0.75rem;
+    }
+
+    .skill-card p {
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    /* Contact Section */
+    .contact-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-content p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(59, 130, 246, 0.2);
+      border: 1px solid rgba(96, 165, 250, 0.5);
+      border-radius: 50%;
+      color: #60a5fa;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.25rem;
+    }
+
+    .social-link:hover {
+      background: #3b82f6;
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(15, 23, 42, 0.9);
+      border-top: 1px solid rgba(100, 116, 139, 0.3);
+      padding: 2rem;
+      text-align: center;
+      color: #94a3b8;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 2.5rem 1rem;
+      }
+
+      section h2 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="container-wrapper"><!-- Navigation -->
+   <nav>
+    <ul>
+     <li><a href="#hero">Home</a></li>
+     <li><a href="#about">About</a></li>
+     <li><a href="#skills">Skills</a></li>
+     <li><a href="#contact">Contact</a></li>
+    </ul>
+   </nav><!-- Hero Section -->
+   <section class="hero" id="hero">
+    <div class="hero-content">
+     <div class="hero-text">
+      <h1>Damodar Subedi</h1>
+      <p>BCA Student | Aspiring Developer | Problem Solver</p><button class="cta-button" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})"> Explore My Work </button>
+     </div>
+     <div class="hero-photo">
+      <div class="photo-placeholder">
+       <img src="damm.jpeg" alt="Damodar Subedi">
+      </div>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+     <div class="about-text">
+      <h3>Hello! 👋</h3>
+      <p>I'm Damodar Subedi, a BCA student passionate about technology and web development. Currently, I'm diving deep into programming and building a strong foundation in computer science fundamentals.</p>
+      <p>I love solving complex problems and turning ideas into functional code. With skills in multiple programming languages and web technologies, I'm constantly learning and growing as a developer.</p>
+      <div class="about-highlight"><strong>📚 Currently Learning:</strong> Advanced web development, data structures, and algorithms
+      </div>
+     </div>
+     <div class="stats-box">
+      <div class="stat-card">
+       <div class="stat-number">
+        50+
+       </div>
+       <div class="stat-label">
+        Projects Completed
+       </div>
+      </div>
+      <div class="stat-card">
+       <div class="stat-number">
+        1000+
+       </div>
+       <div class="stat-label">
+        Hours Coding
+       </div>
+      </div>
+      <div class="stat-card">
+       <div class="stat-number">
+        5+
+       </div>
+       <div class="stat-label">
+        Languages
+       </div>
+      </div>
+      <div class="stat-card">
+       <div class="stat-number">
+        100%
+       </div>
+       <div class="stat-label">
+        Dedication
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Skills Section -->
+   <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+     <div class="skill-card">
+      <div class="skill-icon">
+       📝
+      </div>
+      <h3>C Programming</h3>
+      <p>Strong foundation in C with experience in data structures, algorithms, and object-oriented programming concepts.</p>
+     </div>
+     <div class="skill-card">
+      <div class="skill-icon">
+       🌐
+      </div>
+      <h3>HTML &amp; CSS</h3>
+      <p>Proficient in creating responsive, semantic, and visually appealing web pages with modern CSS techniques.</p>
+     </div>
+     <div class="skill-card">
+      <div class="skill-icon">
+       🧠
+      </div>
+      <h3>Problem Solving</h3>
+      <p>Excellent analytical and logical thinking skills. Passionate about finding efficient solutions to coding challenges.</p>
+     </div>
+     <div class="skill-card">
+      <div class="skill-icon">
+       🎯
+      </div>
+      <h3>Learning Mindset</h3>
+      <p>Dedicated to continuous learning and staying updated with the latest technologies and programming trends.</p>
+     </div>
+     <div class="skill-card">
+      <div class="skill-icon">
+       💡
+      </div>
+      <h3>Creativity</h3>
+      <p>Creative approach to problem-solving combined with technical skills to build innovative solutions.</p>
+     </div>
+     <div class="skill-card">
+      <div class="skill-icon">
+       ⚙️
+      </div>
+      <h3>Web Development</h3>
+      <p>Building responsive web applications with clean, maintainable code and modern development practices.</p>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact">
+    <h2>Let's Connect</h2>
+    <div class="contact-content">
+     <p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out if you'd like to collaborate or just say hello!</p>
+     <div class="social-links"><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram"> <i class="fab fa-instagram"></i> </a> <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn"> <i class="fab fa-linkedin"></i> </a> <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub"> <i class="fab fa-github"></i> </a> <a href="mailto:your.email@example.com" class="social-link" title="Email"> <i class="fas fa-envelope"></i> </a>
+     </div>
+     <p style="color: #94a3b8; font-size: 0.95rem;">📧 Get in touch: <strong style="color: #cbd5e1;">your.email@example.com</strong></p>
+    </div>
+   </section><!-- Footer -->
+   <footer>
+    <p>© 2024 Damodar Subedi. All rights reserved. | BCA Student Portfolio</p>
+   </footer>
+  </div>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d650b79733ee6bc',t:'MTc3MjUwMzE5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
