@@ -1,6 +1,6 @@
 /* =========================================
    DAMODAR DIGITAL WORLD
-   PART 2 + PART 5
+   PART 2 + PART 5 + PART 6 + PART 7
 ========================================= */
 
 
@@ -45,6 +45,166 @@ const player = {
     speed: 0.08
 
 };
+
+
+/* =========================================
+   PART 7 — PLAYER VISUAL
+========================================= */
+
+const playerVisual = new THREE.Group();
+
+scene.add(playerVisual);
+
+
+/* =========================================
+   MAIN PLAYER ORB
+========================================= */
+
+const playerOrbGeometry = new THREE.SphereGeometry(
+    0.32,
+    24,
+    24
+);
+
+const playerOrbMaterial = new THREE.MeshBasicMaterial({
+
+    color: 0xffffff
+
+});
+
+const playerOrb = new THREE.Mesh(
+
+    playerOrbGeometry,
+
+    playerOrbMaterial
+
+);
+
+playerVisual.add(playerOrb);
+
+
+/* =========================================
+   PLAYER AURA
+========================================= */
+
+const playerAuraGeometry = new THREE.SphereGeometry(
+    0.58,
+    24,
+    24
+);
+
+const playerAuraMaterial = new THREE.MeshBasicMaterial({
+
+    color: 0xffffff,
+
+    transparent: true,
+
+    opacity: 0.08,
+
+    depthWrite: false
+
+});
+
+const playerAura = new THREE.Mesh(
+
+    playerAuraGeometry,
+
+    playerAuraMaterial
+
+);
+
+playerVisual.add(playerAura);
+
+
+/* =========================================
+   PLAYER ROTATING RING
+========================================= */
+
+const playerRingGeometry = new THREE.TorusGeometry(
+
+    0.52,
+
+    0.018,
+
+    12,
+
+    64
+
+);
+
+const playerRingMaterial = new THREE.MeshBasicMaterial({
+
+    color: 0xffffff,
+
+    transparent: true,
+
+    opacity: 0.75
+
+});
+
+const playerRing = new THREE.Mesh(
+
+    playerRingGeometry,
+
+    playerRingMaterial
+
+);
+
+playerRing.rotation.x = Math.PI / 2;
+
+playerVisual.add(playerRing);
+
+
+/* =========================================
+   PLAYER DIRECTION POINTER
+========================================= */
+
+const playerPointerGeometry = new THREE.ConeGeometry(
+
+    0.10,
+
+    0.28,
+
+    4
+
+);
+
+const playerPointerMaterial = new THREE.MeshBasicMaterial({
+
+    color: 0xffffff
+
+});
+
+const playerPointer = new THREE.Mesh(
+
+    playerPointerGeometry,
+
+    playerPointerMaterial
+
+);
+
+
+/*
+   Point toward player's forward direction
+*/
+
+playerPointer.rotation.x = -Math.PI / 2;
+
+playerPointer.position.z = -0.40;
+
+playerVisual.add(playerPointer);
+
+
+/* =========================================
+   PLAYER DIRECTION STATE
+========================================= */
+
+let playerDirectionYaw = 0;
+
+
+/* Player visual height */
+
+const playerBaseHeight = -0.42;
 
 
 /* =========================================
@@ -623,11 +783,6 @@ window.addEventListener(
    MLBB CAMERA ROTATION
 ========================================= */
 
-
-/*
-   These variables control dragging.
-*/
-
 let cameraDragging = false;
 
 let cameraPointerId = null;
@@ -658,7 +813,7 @@ document.addEventListener(
 
         /*
            Don't rotate camera when
-           touching joystick or buttons.
+           touching UI elements.
         */
 
         if (
@@ -666,6 +821,8 @@ document.addEventListener(
             event.target.closest(".joystick-container") ||
 
             event.target.closest("#zone-interaction") ||
+
+            event.target.closest("#portfolio-overlay") ||
 
             event.target.closest("button")
 
@@ -760,29 +917,17 @@ document.addEventListener(
             event.clientY;
 
 
-        /*
-           Horizontal camera rotation
-        */
-
         targetCameraYaw +=
 
             deltaX *
             cameraSensitivity;
 
 
-        /*
-           Vertical camera rotation
-        */
-
         targetCameraPitch +=
 
             deltaY *
             pitchSensitivity;
 
-
-        /*
-           Prevent camera from flipping
-        */
 
         targetCameraPitch =
 
@@ -796,11 +941,6 @@ document.addEventListener(
 
             );
 
-
-        /*
-           Stop browser scrolling
-           while swiping
-        */
 
         if (event.pointerType === "touch") {
 
@@ -980,11 +1120,6 @@ window.addEventListener(
 
 /* =========================================
    PART 5 — PORTFOLIO ZONES
-========================================= */
-
-
-/* =========================================
-   CREATE ATTRACTIVE ZONE
 ========================================= */
 
 function createZone(name, x, z, symbol) {
@@ -1535,12 +1670,6 @@ function startJoystick(event) {
 
     joystickActive = true;
 
-
-    /*
-       Camera must NOT rotate
-       when joystick is touched.
-    */
-
     cameraDragging = false;
 
 
@@ -1594,8 +1723,6 @@ function moveJoystick(event) {
         event.clientY - centerY;
 
 
-    /* Maximum joystick movement */
-
     const maxDistance = 32;
 
 
@@ -1628,10 +1755,6 @@ function moveJoystick(event) {
     }
 
 
-    /* =====================================
-       NORMALIZED INPUT
-    ===================================== */
-
     let normalizedX =
 
         x / maxDistance;
@@ -1641,10 +1764,6 @@ function moveJoystick(event) {
 
         y / maxDistance;
 
-
-    /* =====================================
-       DEAD ZONE
-    ===================================== */
 
     const deadZone = 0.08;
 
@@ -1671,18 +1790,10 @@ function moveJoystick(event) {
     }
 
 
-    /* =====================================
-       TARGET MOVEMENT
-    ===================================== */
-
     targetJoystickX = normalizedX;
 
     targetJoystickY = normalizedY;
 
-
-    /* =====================================
-       MOVE JOYSTICK KNOB
-    ===================================== */
 
     joystickStick.style.transform =
 
@@ -1819,6 +1930,326 @@ let nearbyZone = null;
 
 
 /* =========================================
+   PART 6 — PORTFOLIO OVERLAY
+========================================= */
+
+const portfolioOverlay =
+
+    document.getElementById(
+
+        "portfolio-overlay"
+
+    );
+
+
+const closePortfolio =
+
+    document.getElementById(
+
+        "close-portfolio"
+
+    );
+
+
+const portfolioIcon =
+
+    document.getElementById(
+
+        "portfolio-icon"
+
+    );
+
+
+const portfolioTitle =
+
+    document.getElementById(
+
+        "portfolio-title"
+
+    );
+
+
+const portfolioDescription =
+
+    document.getElementById(
+
+        "portfolio-description"
+
+    );
+
+
+const portfolioContents =
+
+    document.querySelectorAll(
+
+        ".portfolio-content"
+
+    );
+
+
+/* =========================================
+   PORTFOLIO DATA
+========================================= */
+
+const portfolioData = {
+
+    CODE: {
+
+        icon: "💻",
+
+        description:
+            "Web development, interactive websites and digital projects."
+
+    },
+
+
+    DESIGN: {
+
+        icon: "🎨",
+
+        description:
+            "Modern UI/UX, visual design and premium digital interfaces."
+
+    },
+
+
+    VIDEO: {
+
+        icon: "🎬",
+
+        description:
+            "Creative video editing, transitions, effects and cinematic storytelling."
+
+    }
+
+};
+
+
+/* =========================================
+   OPEN PORTFOLIO FUNCTION
+========================================= */
+
+function setPortfolioCategory(category) {
+
+    const categoryName =
+        String(category || "").toUpperCase();
+
+    const data =
+        portfolioData[categoryName];
+
+    if (!data) return;
+
+    /* =====================================
+       SET HEADER
+    ===================================== */
+
+    if (portfolioIcon) {
+
+        portfolioIcon.textContent =
+            data.icon;
+
+    }
+
+    if (portfolioTitle) {
+
+        portfolioTitle.textContent =
+            categoryName;
+
+    }
+
+    if (portfolioDescription) {
+
+        portfolioDescription.textContent =
+            data.description;
+
+    }
+
+    /* =====================================
+       HIDE ALL PROJECT CONTENT
+    ===================================== */
+
+    portfolioContents.forEach(
+
+        (content) => {
+
+            content.classList.remove(
+
+                "active"
+
+            );
+
+        }
+
+    );
+
+    /* =====================================
+       SHOW ONLY SELECTED CATEGORY
+    ===================================== */
+
+    const selectedContent =
+
+        document.getElementById(
+
+            categoryName.toLowerCase() +
+
+            "-content"
+
+        );
+
+    if (selectedContent) {
+
+        selectedContent.classList.add(
+
+            "active"
+
+        );
+
+    }
+
+    /* =====================================
+       UPDATE CATEGORY BUTTONS
+    ===================================== */
+
+    const portfolioTabs =
+
+        document.querySelectorAll(
+
+            ".portfolio-tab"
+
+        );
+
+    portfolioTabs.forEach((tab) => {
+
+        const tabCategory =
+
+            tab.getAttribute(
+
+                "data-category"
+
+            );
+
+        tab.classList.toggle(
+
+            "active",
+
+            tabCategory ===
+
+                categoryName.toLowerCase()
+
+        );
+
+    });
+
+}
+
+
+/* =========================================
+   OPEN PORTFOLIO FUNCTION
+========================================= */
+
+function openPortfolioZone() {
+
+    if (!nearbyZone) return;
+
+    const zoneName =
+        nearbyZone.userData.name;
+
+    const data =
+        portfolioData[zoneName];
+
+    if (!data) return;
+
+    /* Always open with the zone's own category */
+    setPortfolioCategory(zoneName);
+
+
+    /* =====================================
+       OPEN OVERLAY
+    ===================================== */
+
+    if (portfolioOverlay) {
+
+        portfolioOverlay.classList.add(
+
+            "active"
+
+        );
+
+    }
+
+
+    /* =====================================
+       STOP MOVEMENT
+    ===================================== */
+
+    joystickX = 0;
+
+    joystickY = 0;
+
+    targetJoystickX = 0;
+
+    targetJoystickY = 0;
+
+
+    keys.w = false;
+
+    keys.a = false;
+
+    keys.s = false;
+
+    keys.d = false;
+
+
+    cameraDragging = false;
+
+}
+
+
+/* =========================================
+   PORTFOLIO CATEGORY TABS
+========================================= */
+
+const portfolioTabs =
+
+    document.querySelectorAll(
+
+        ".portfolio-tab"
+
+    );
+
+portfolioTabs.forEach((tab) => {
+
+    tab.addEventListener(
+
+        "click",
+
+        (event) => {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            const category =
+
+                tab.getAttribute(
+
+                    "data-category"
+
+                );
+
+            setPortfolioCategory(
+
+                category
+
+            );
+
+        }
+
+    );
+
+});
+
+/* =========================================
    ENTER ZONE BUTTON
 ========================================= */
 
@@ -1830,22 +2261,148 @@ if (enterZoneButton) {
 
         () => {
 
-            if (!nearbyZone) return;
-
-
-            console.log(
-
-                "Entering zone:",
-
-                nearbyZone.userData.name
-
-            );
+            openPortfolioZone();
 
         }
 
     );
 
 }
+
+
+/* =========================================
+   DESKTOP E / ENTER
+========================================= */
+
+window.addEventListener(
+
+    "keydown",
+
+    (event) => {
+
+        /*
+           Don't trigger repeatedly
+           while holding the key.
+        */
+
+        if (event.repeat) return;
+
+
+        if (
+
+            event.key.toLowerCase() === "e" ||
+
+            event.key === "Enter"
+
+        ) {
+
+            if (nearbyZone) {
+
+                openPortfolioZone();
+
+            }
+
+        }
+
+    }
+
+);
+
+
+/* =========================================
+   CLOSE PORTFOLIO
+========================================= */
+
+function closePortfolioOverlay() {
+
+    if (portfolioOverlay) {
+
+        portfolioOverlay.classList.remove(
+
+            "active"
+
+        );
+
+    }
+
+
+    cameraDragging = false;
+
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+if (closePortfolio) {
+
+    closePortfolio.addEventListener(
+
+        "click",
+
+        (event) => {
+
+            event.stopPropagation();
+
+            closePortfolioOverlay();
+
+        }
+
+    );
+
+}
+
+
+/* =========================================
+   CLICK OUTSIDE PORTFOLIO WINDOW
+========================================= */
+
+if (portfolioOverlay) {
+
+    portfolioOverlay.addEventListener(
+
+        "click",
+
+        (event) => {
+
+            if (
+
+                event.target ===
+                portfolioOverlay
+
+            ) {
+
+                closePortfolioOverlay();
+
+            }
+
+        }
+
+    );
+
+}
+
+
+/* =========================================
+   ESC KEY
+========================================= */
+
+window.addEventListener(
+
+    "keydown",
+
+    (event) => {
+
+        if (event.key === "Escape") {
+
+            closePortfolioOverlay();
+
+        }
+
+    }
+
+);
 
 
 /* =========================================
@@ -1929,7 +2486,9 @@ function animate() {
 
                 index
 
-            ) * 0.002;
+            ) *
+
+            0.002;
 
     });
 
@@ -1983,10 +2542,6 @@ function animate() {
         joystickY;
 
 
-    /*
-       Keyboard
-    */
-
     if (keys.w) {
 
         moveY -= 1;
@@ -2015,9 +2570,9 @@ function animate() {
     }
 
 
-    /*
-       Normalize diagonal movement
-    */
+    /* =====================================
+       NORMALIZE DIAGONAL MOVEMENT
+    ===================================== */
 
     const movementLength =
 
@@ -2043,12 +2598,6 @@ function animate() {
        CAMERA RELATIVE DIRECTION
     ===================================== */
 
-
-    /*
-       Forward direction
-       based on camera rotation
-    */
-
     const forwardX =
 
         Math.sin(cameraYaw);
@@ -2059,10 +2608,6 @@ function animate() {
         -Math.cos(cameraYaw);
 
 
-    /*
-       Right direction
-    */
-
     const rightX =
 
         Math.cos(cameraYaw);
@@ -2072,11 +2617,6 @@ function animate() {
 
         Math.sin(cameraYaw);
 
-
-    /*
-       Convert joystick input
-       into camera-relative movement.
-    */
 
     const movementX =
 
@@ -2096,18 +2636,38 @@ function animate() {
        MOVE PLAYER
     ===================================== */
 
-    player.x +=
+    /*
+       Only move when portfolio
+       overlay is closed.
+    */
 
-        movementX *
+    const portfolioIsOpen =
 
-        player.speed;
+        portfolioOverlay &&
+
+        portfolioOverlay.classList.contains(
+
+            "active"
+
+        );
 
 
-    player.z +=
+    if (!portfolioIsOpen) {
 
-        movementZ *
+        player.x +=
 
-        player.speed;
+            movementX *
+
+            player.speed;
+
+
+        player.z +=
+
+            movementZ *
+
+            player.speed;
+
+    }
 
 
     /* =====================================
@@ -2141,6 +2701,129 @@ function animate() {
 
 
     /* =====================================
+       PART 7 — PLAYER ANIMATION
+    ===================================== */
+
+    /*
+       Keep the visual player synced
+       with the actual player position.
+    */
+
+    const playerBob =
+
+        Math.sin(time * 3) * 0.06;
+
+
+    playerVisual.position.set(
+
+        player.x,
+
+        playerBaseHeight + playerBob,
+
+        player.z
+
+    );
+
+
+    /*
+       Soft aura breathing effect
+    */
+
+    const auraPulse =
+
+        1 +
+
+        Math.sin(time * 3) *
+
+        0.08;
+
+
+    playerAura.scale.set(
+
+        auraPulse,
+
+        auraPulse,
+
+        auraPulse
+
+    );
+
+
+    /*
+       Rotate player's ring
+    */
+
+    playerRing.rotation.z =
+
+        time * 1.5;
+
+
+    playerRing.rotation.y =
+
+        Math.sin(time * 1.5) *
+
+        0.25;
+
+
+    /*
+       Make player face movement direction
+    */
+
+    if (movementLength > 0.05) {
+
+        const targetDirection =
+
+            Math.atan2(
+
+                -movementX,
+
+                -movementZ
+
+            );
+
+
+        let angleDifference =
+
+            targetDirection -
+
+            playerDirectionYaw;
+
+
+        while (angleDifference > Math.PI) {
+
+            angleDifference -=
+
+                Math.PI * 2;
+
+        }
+
+
+        while (angleDifference < -Math.PI) {
+
+            angleDifference +=
+
+                Math.PI * 2;
+
+        }
+
+
+        playerDirectionYaw +=
+
+            angleDifference * 0.15;
+
+    }
+
+
+    /*
+       Smooth player rotation
+    */
+
+    playerVisual.rotation.y =
+
+        playerDirectionYaw;
+
+
+    /* =====================================
        SMOOTH CAMERA ROTATION
     ===================================== */
 
@@ -2170,22 +2853,12 @@ function animate() {
        CAMERA POSITION
     ===================================== */
 
-
-    /*
-       Horizontal camera distance
-       changes slightly with pitch.
-    */
-
     const horizontalDistance =
 
         cameraDistance *
 
         Math.cos(cameraPitch);
 
-
-    /*
-       Camera stays behind player.
-    */
 
     cameraPositionTarget.set(
 
@@ -2214,10 +2887,6 @@ function animate() {
     );
 
 
-    /*
-       Smooth camera follow
-    */
-
     camera.position.lerp(
 
         cameraPositionTarget,
@@ -2241,7 +2910,6 @@ function animate() {
         player.y -
 
             0.8 +
-
 
             Math.sin(cameraPitch) *
 
@@ -2288,8 +2956,6 @@ function animate() {
             zone.userData.orbit;
 
 
-        /* Floating core */
-
         object.rotation.x +=
 
             0.01;
@@ -2310,24 +2976,20 @@ function animate() {
 
                 index
 
-            ) * 0.25;
+            ) *
 
+            0.25;
 
-        /* Outer ring */
 
         zoneRing.rotation.z =
 
             time * 0.4;
 
 
-        /* Inner ring */
-
         innerRing.rotation.z =
 
             -time * 0.6;
 
-
-        /* Orbit */
 
         orbit.rotation.x =
 
@@ -2380,10 +3042,6 @@ function animate() {
             distance;
 
 
-        /* =================================
-           PLAYER IS NEAR ZONE
-        ================================= */
-
         if (distance < 4) {
 
             nearbyZone = zone;
@@ -2409,11 +3067,6 @@ function animate() {
                 0.9;
 
         }
-
-
-        /* =================================
-           PLAYER IS FAR FROM ZONE
-        ================================= */
 
         else {
 
