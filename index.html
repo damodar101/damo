@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,152 +11,1282 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Sora + Inter + Caveat -->
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Sora:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
 
     <!-- Background -->
     <div class="background">
+
         <div class="grid"></div>
 
         <div class="glow glow-one"></div>
+
         <div class="glow glow-two"></div>
-    </div>
-
-<!-- 3D WORLD -->
-
-<canvas id="world"></canvas>
-
-
-<!-- 3D WORLD UI -->
-
-<div class="world-ui">
-
-    <div class="world-title">
-        DAMODAR // DIGITAL WORLD
-    </div>
-
-    <div class="world-subtitle">
-        welcome to my workspace
-    </div>
-
-</div>
-
-
-<!-- JOYSTICK -->
-
-<div class="joystick-container">
-
-    <div class="joystick-ring">
-
-        <div class="joystick-stick"></div>
 
     </div>
 
-    <div class="joystick-label">
-    MOVE AROUND
-</div>
 
-<!-- ZONE INTERACTION -->
-<div id="zone-interaction">
-    <div class="zone-status">
-        <span class="zone-dot"></span>
-        <span id="zone-name">ZONE</span>
-    </div>
+    <!-- =========================================
+         PART 9 — QUICK PORTFOLIO
+    ========================================== -->
 
-    <button id="enter-zone">
-        ENTER ZONE →
-    </button>
-</div>
+    <section id="quick-portfolio" class="quick-portfolio">
 
-</div>
-    <!-- Main Landing Screen -->
-    <main class="landing">
 
-        <!-- Freelance Status -->
-        <div class="status">
-            <span class="status-dot"></span>
-            AVAILABLE FOR FREELANCE
+        <!-- TOP NAV -->
+
+        <nav class="quick-nav">
+
+            <div class="quick-logo">
+                DAMODAR<span>.</span>
+            </div>
+
+
+            <div class="quick-nav-links">
+
+                <a href="#quick-about">
+                    About
+                </a>
+
+                <a href="#quick-skills">
+                    Skills
+                </a>
+
+                <a href="#quick-projects">
+                    Projects
+                </a>
+
+                <a href="#quick-services">
+                    Services
+                </a>
+
+                <a href="#quick-contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <button class="quick-back" id="back-to-world">
+
+                ← 3D WORLD
+
+            </button>
+
+        </nav>
+
+
+
+        <!-- HERO -->
+
+        <section class="quick-hero">
+
+            <div class="quick-hero-content">
+
+                <div class="quick-status">
+
+                    <span></span>
+
+                    AVAILABLE FOR FREELANCE
+
+                </div>
+
+
+                <p class="quick-small-title">
+
+                    HELLO, I'M
+
+                </p>
+
+
+                <h1>
+
+                    DAMODAR<br>
+
+                    <span>
+                        SUBEDI
+                    </span>
+
+                </h1>
+
+
+                <p class="quick-tagline">
+
+                    I BUILD. I CREATE. I KEEP LEARNING.
+
+                </p>
+
+
+                <p class="quick-description">
+
+                    Web developer, UI/UX enthusiast and creative video editor
+                    focused on building modern digital experiences.
+
+                </p>
+
+
+                <div class="quick-actions">
+
+                    <a
+                        href="#quick-projects"
+                        class="quick-btn primary">
+
+                        VIEW MY WORK →
+
+                    </a>
+
+
+                    <a
+                        href="#quick-contact"
+                        class="quick-btn secondary">
+
+                        HIRE ME
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DIGITAL ORB -->
+
+            <div class="quick-orb-area">
+
+                <div class="quick-orb-glow"></div>
+
+                <div class="quick-orb">
+
+                    <div class="orb-core"></div>
+
+                    <div class="orb-ring ring-one"></div>
+
+                    <div class="orb-ring ring-two"></div>
+
+                    <div class="orb-ring ring-three"></div>
+
+                </div>
+
+
+                <div class="orb-label">
+
+                    DIGITAL<br>
+
+                    CREATOR
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ABOUT -->
+
+        <section
+            id="quick-about"
+            class="quick-section">
+
+            <div class="section-number">
+
+                01 / ABOUT
+
+            </div>
+
+
+            <div class="section-heading">
+
+                <h2>
+                    WHO I AM
+                </h2>
+
+
+                <p>
+
+                    I enjoy turning ideas into websites, interfaces and
+                    creative digital experiences.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="about-grid">
+
+                <div class="about-card">
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        BUILD
+                    </h3>
+
+                    <p>
+
+                        I create responsive websites with clean structure,
+                        modern layouts and interactive experiences.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="about-card">
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        DESIGN
+                    </h3>
+
+                    <p>
+
+                        I enjoy creating modern UI/UX designs with glassmorphism,
+                        smooth layouts and strong visual presentation.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="about-card">
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        CREATE
+                    </h3>
+
+                    <p>
+
+                        I also work with video editing and creative visual
+                        storytelling using CapCut.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SKILLS -->
+
+        <section
+            id="quick-skills"
+            class="quick-section">
+
+            <div class="section-number">
+
+                02 / SKILLS
+
+            </div>
+
+
+            <div class="section-heading">
+
+                <h2>
+                    WHAT I WORK WITH
+                </h2>
+
+
+                <p>
+
+                    Technologies and creative tools I use to build and create.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="skills-grid">
+
+                <!-- WEB DEVELOPMENT -->
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+
+                        &lt;/&gt;
+
+                    </div>
+
+
+                    <h3>
+                        WEB DEVELOPMENT
+                    </h3>
+
+
+                    <div class="skill-tags">
+
+                        <span>
+                            HTML
+                        </span>
+
+                        <span>
+                            CSS
+                        </span>
+
+                        <span>
+                            JAVASCRIPT
+                        </span>
+
+                        <span>
+                            GIT
+                        </span>
+
+                        <span>
+                            GITHUB
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- UI UX -->
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+
+                        ✦
+
+                    </div>
+
+
+                    <h3>
+                        UI / UX DESIGN
+                    </h3>
+
+
+                    <div class="skill-tags">
+
+                        <span>
+                            UI DESIGN
+                        </span>
+
+                        <span>
+                            UX
+                        </span>
+
+                        <span>
+                            GLASSMORPHISM
+                        </span>
+
+                        <span>
+                            RESPONSIVE
+                        </span>
+
+                        <span>
+                            VISUAL DESIGN
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- VIDEO -->
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+
+                        ▶
+
+                    </div>
+
+
+                    <h3>
+                        VIDEO EDITING
+                    </h3>
+
+
+                    <div class="skill-tags">
+
+                        <span>
+                            CAPCUT
+                        </span>
+
+                        <span>
+                            TRANSITIONS
+                        </span>
+
+                        <span>
+                            EFFECTS
+                        </span>
+
+                        <span>
+                            MOTION
+                        </span>
+
+                        <span>
+                            STORYTELLING
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             PART 11 — PROJECTS
+        ========================================== -->
+
+        <section
+            id="quick-projects"
+            class="quick-section">
+
+            <div class="section-number">
+
+                03 / PROJECTS
+
+            </div>
+
+
+            <div class="section-heading">
+
+                <h2>
+                    PROJECTS I'VE BUILT
+                </h2>
+
+
+                <p>
+
+                    A collection of websites, interfaces and creative
+                    digital experiences I've worked on.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="projects-grid">
+
+
+                <!-- PROJECT 01 -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+
+                        01
+
+                    </div>
+
+
+                    <div class="project-icon">
+
+                        🏨
+
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <span class="project-category">
+
+                            WEB DEVELOPMENT
+
+                        </span>
+
+
+                        <h3>
+
+                            Nepal Hotel Finder
+
+                        </h3>
+
+
+                        <p>
+
+                            A Nepal-focused hotel discovery platform
+                            designed to help travelers find hotels by
+                            province, district and category.
+
+                        </p>
+
+
+                        <div class="project-tech">
+
+                            <span>
+                                HTML
+                            </span>
+
+                            <span>
+                                CSS
+                            </span>
+
+                            <span>
+                                JAVASCRIPT
+                            </span>
+
+                            <span>
+                                UI/UX
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-actions">
+
+                        <a
+                            href="#"
+                            class="project-btn">
+
+                            VIEW PROJECT ↗
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 02 -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+
+                        02
+
+                    </div>
+
+
+                    <div class="project-icon">
+
+                        ❤️
+
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <span class="project-category">
+
+                            INTERACTIVE WEB
+
+                        </span>
+
+
+                        <h3>
+
+                            Interactive Anniversary Website
+
+                        </h3>
+
+
+                        <p>
+
+                            A personalized interactive experience
+                            combining animations, memories, music
+                            and cinematic visual effects.
+
+                        </p>
+
+
+                        <div class="project-tech">
+
+                            <span>
+                                HTML
+                            </span>
+
+                            <span>
+                                CSS
+                            </span>
+
+                            <span>
+                                JAVASCRIPT
+                            </span>
+
+                            <span>
+                                ANIMATION
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-actions">
+
+                        <a
+                            href="https://damodar101.github.io/Amrit-special/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-btn">
+
+                            LIVE DEMO ↗
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 03 -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+
+                        03
+
+                    </div>
+
+
+                    <div class="project-icon">
+
+                        🎨
+
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <span class="project-category">
+
+                            UI / UX DESIGN
+
+                        </span>
+
+
+                        <h3>
+
+                            Modern Digital Interfaces
+
+                        </h3>
+
+
+                        <p>
+
+                            Clean, modern and responsive interface
+                            concepts focused on visual hierarchy,
+                            usability and premium user experience.
+
+                        </p>
+
+
+                        <div class="project-tech">
+
+                            <span>
+                                UI/UX
+                            </span>
+
+                            <span>
+                                WEB DESIGN
+                            </span>
+
+                            <span>
+                                GLASSMORPHISM
+                            </span>
+
+                            <span>
+                                RESPONSIVE
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-actions">
+
+                        <a
+                            href="#"
+                            class="project-btn">
+
+                            VIEW PROJECT ↗
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 04 -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+
+                        04
+
+                    </div>
+
+
+                    <div class="project-icon">
+
+                        🎬
+
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <span class="project-category">
+
+                            VIDEO EDITING
+
+                        </span>
+
+
+                        <h3>
+
+                            Creative Video Edits
+
+                        </h3>
+
+
+                        <p>
+
+                            Short-form and cinematic video edits
+                            with transitions, effects, pacing and
+                            storytelling created using CapCut.
+
+                        </p>
+
+
+                        <div class="project-tech">
+
+                            <span>
+                                CAPCUT
+                            </span>
+
+                            <span>
+                                EDITING
+                            </span>
+
+                            <span>
+                                TRANSITIONS
+                            </span>
+
+                            <span>
+                                EFFECTS
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-actions">
+
+                        <a
+                            href="#"
+                            class="project-btn">
+
+                            VIEW WORK ↗
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SERVICES -->
+
+        <section
+            id="quick-services"
+            class="quick-section">
+
+            <div class="section-number">
+
+                04 / SERVICES
+
+            </div>
+
+
+            <div class="section-heading">
+
+                <h2>
+                    WHAT I CAN DO
+                </h2>
+
+
+                <p>
+
+                    Digital services for individuals, creators and small businesses.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="services-grid">
+
+                <div class="service-card">
+
+                    <span>
+                        01
+                    </span>
+
+
+                    <h3>
+
+                        WEBSITE DEVELOPMENT
+
+                    </h3>
+
+
+                    <p>
+
+                        Responsive and modern websites built around your idea,
+                        brand or business.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="service-card">
+
+                    <span>
+                        02
+                    </span>
+
+
+                    <h3>
+
+                        UI / UX DESIGN
+
+                    </h3>
+
+
+                    <p>
+
+                        Clean, attractive interfaces designed to look modern
+                        while remaining easy to use.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="service-card">
+
+                    <span>
+                        03
+                    </span>
+
+
+                    <h3>
+
+                        VIDEO EDITING
+
+                    </h3>
+
+
+                    <p>
+
+                        Creative edits for social media, personal projects
+                        and visual storytelling.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CONTACT -->
+
+        <section
+            id="quick-contact"
+            class="quick-contact">
+
+            <div class="section-number">
+
+                05 / CONTACT
+
+            </div>
+
+
+            <h2>
+
+                HAVE AN IDEA?
+
+            </h2>
+
+
+            <p>
+
+                Let's turn it into something real.
+
+            </p>
+
+
+            <a
+                href="mailto:hello@damodarsubedi.com.np"
+                class="contact-btn">
+
+                START A PROJECT →
+
+            </a>
+
+
+
+            <div class="contact-links">
+
+                <a
+                    href="#"
+                    target="_blank">
+
+                    GITHUB
+
+                </a>
+
+
+                <a
+                    href="#"
+                    target="_blank">
+
+                    LINKEDIN
+
+                </a>
+
+
+                <a
+                    href="mailto:hello@damodarsubedi.com.np">
+
+                    EMAIL
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="quick-footer">
+
+            <div>
+
+                DAMODAR // DIGITAL WORLD
+
+            </div>
+
+
+            <div>
+
+                © 2026 DAMODAR SUBEDI
+
+            </div>
+
+
+            <div>
+
+                NEPAL · 05.0
+
+            </div>
+
+        </footer>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         3D WORLD
+    ========================================== -->
+
+    <canvas id="world"></canvas>
+
+
+
+    <!-- 3D WORLD UI -->
+
+    <div class="world-ui">
+
+        <div class="world-title">
+
+            DAMODAR // DIGITAL WORLD
+
         </div>
 
 
-        <!-- Hero Content -->
+        <div class="world-subtitle">
+
+            welcome to my workspace
+
+        </div>
+
+    </div>
+
+
+
+    <!-- JOYSTICK -->
+
+    <div class="joystick-container">
+
+        <div class="joystick-ring">
+
+            <div class="joystick-stick"></div>
+
+        </div>
+
+
+        <div class="joystick-label">
+
+            MOVE AROUND
+
+        </div>
+
+
+        <div id="zone-interaction">
+
+            <div class="zone-status">
+
+                <span class="zone-dot"></span>
+
+                <span id="zone-name">
+
+                    ZONE
+
+                </span>
+
+            </div>
+
+
+            <button id="enter-zone">
+
+                ENTER ZONE →
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Main Landing Screen -->
+
+    <main class="landing">
+
+        <div class="status">
+
+            <span class="status-dot"></span>
+
+            AVAILABLE FOR FREELANCE
+
+        </div>
+
+
+
         <div class="hero-content">
 
             <p class="eyebrow">
+
                 WELCOME TO
+
             </p>
 
+
             <h1>
+
                 DAMODAR
-                <span>SUBEDI</span>
+
+                <span>
+
+                    SUBEDI
+
+                </span>
+
             </h1>
+
 
             <div class="divider"></div>
 
+
             <p class="tagline">
+
                 I BUILD. I CREATE.<br>
-                <span>I KEEP LEARNING.</span>
+
+                <span>
+
+                    I KEEP LEARNING.
+
+                </span>
+
             </p>
 
-            <!-- Cursive personal line -->
+
             <p class="signature-line">
+
                 with curiosity & creativity
+
             </p>
+
 
             <p class="description">
+
                 A digital space where web development,
                 design, creativity and experiments
                 come together.
+
             </p>
 
         </div>
 
 
-        <!-- Buttons -->
+
         <div class="actions">
 
-            <button class="primary-btn" id="enterBtn">
-                <span>ENTER THE WORLD</span>
-                <span class="arrow">↗</span>
+            <button
+                class="primary-btn"
+                id="enterBtn">
+
+                <span>
+
+                    ENTER THE WORLD
+
+                </span>
+
+
+                <span class="arrow">
+
+                    ↗
+
+                </span>
+
             </button>
 
-            <button class="secondary-btn" id="quickBtn">
+
+            <button
+                class="secondary-btn"
+                id="quickBtn">
+
                 QUICK PORTFOLIO
+
             </button>
 
         </div>
 
 
-        <!-- Bottom Information -->
+
         <div class="bottom-info">
 
             <div>
-                <span class="label">BASED IN</span>
-                <span>Nepal</span>
+
+                <span class="label">
+
+                    BASED IN
+
+                </span>
+
+
+                <span>
+
+                    Nepal
+
+                </span>
+
             </div>
 
-            <div>
-                <span class="label">FOCUS</span>
-                <span>WEB · UI/UX · VIDEO</span>
-            </div>
 
             <div>
-                <span class="label">VERSION</span>
-                <span>01.0</span>
+
+                <span class="label">
+
+                    FOCUS
+
+                </span>
+
+
+                <span>
+
+                    WEB · UI/UX · VIDEO
+
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <span class="label">
+
+                    VERSION
+
+                </span>
+
+
+                <span>
+
+                    01.0
+
+                </span>
+
             </div>
 
         </div>
 
 
-        <!-- Scroll Indicator -->
+
         <div class="scroll-indicator">
 
-            <span>SCROLL TO EXPLORE</span>
+            <span>
+
+                SCROLL TO EXPLORE
+
+            </span>
+
 
             <div class="scroll-line"></div>
 
@@ -164,21 +1295,685 @@
     </main>
 
 
+
     <!-- Transition Screen -->
-    <div class="transition" id="transition">
+
+    <div
+        class="transition"
+        id="transition">
 
         <div class="transition-text">
+
             LOADING DIGITAL WORLD<span>...</span>
+
         </div>
 
     </div>
 
 
-<!-- Three.js -->
-<script type="module" src="world.js"></script>
 
-<!-- Main JavaScript -->
-<script src="script.js"></script>
+    <!-- Three.js -->
+
+    <script
+        type="module"
+        src="world.js">
+    </script>
+
+
+
+    <!-- Main JavaScript -->
+
+    <script src="script.js"></script>
+
+
+
+    <!-- =========================================
+         PORTFOLIO ZONE OVERLAY
+    ========================================== -->
+
+    <div id="portfolio-overlay">
+
+        <div class="portfolio-window">
+
+            <button id="close-portfolio">
+                ×
+            </button>
+
+
+            <div
+                class="portfolio-icon"
+                id="portfolio-icon">
+
+                💻
+
+            </div>
+
+
+            <p class="portfolio-kicker">
+
+                DAMODAR // DIGITAL WORLD
+
+            </p>
+
+
+            <h2 id="portfolio-title">
+
+                CODE
+
+            </h2>
+
+
+            <p id="portfolio-description">
+
+                Web development, interactive websites and digital projects.
+
+            </p>
+
+
+
+            <!-- =========================================
+                 CATEGORY BUTTONS
+            ========================================== -->
+
+            <div class="portfolio-tabs">
+
+                <button
+                    class="portfolio-tab active"
+                    data-category="code">
+
+                    CODE
+
+                </button>
+
+
+                <button
+                    class="portfolio-tab"
+                    data-category="design">
+
+                    DESIGN
+
+                </button>
+
+
+                <button
+                    class="portfolio-tab"
+                    data-category="video">
+
+                    VIDEO
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 CODE CONTENT
+            ========================================== -->
+
+            <div
+                class="portfolio-content active"
+                id="code-content">
+
+
+                <!-- PROJECT 01 -->
+
+                <div class="project-card">
+
+                    <div class="project-top">
+
+                        <span class="project-number">
+
+                            01
+
+                        </span>
+
+
+                        <span class="project-status">
+
+                            PROJECT
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-visual">
+
+                        <div class="visual-grid"></div>
+
+                        <div class="visual-glow"></div>
+
+                        <div class="visual-icon">
+
+                            🏨
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <h3>
+
+                            Nepal Hotel Finder
+
+                        </h3>
+
+
+                        <p>
+
+                            A Nepal-focused hotel discovery concept
+                            designed to help travelers find hotels
+                            by province, district and category.
+
+                        </p>
+
+
+                        <div class="project-tech">
+
+                            <span>
+                                HTML
+                            </span>
+
+                            <span>
+                                CSS
+                            </span>
+
+                            <span>
+                                JAVASCRIPT
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="project-view"
+                            data-link="#">
+
+                            VIEW PROJECT
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 02 -->
+
+                <div class="project-card">
+
+                    <div class="project-top">
+
+                        <span class="project-number">
+
+                            02
+
+                        </span>
+
+
+                        <span class="project-status">
+
+                            CREATIVE
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-visual">
+
+                        <div class="visual-grid"></div>
+
+                        <div class="visual-glow"></div>
+
+                        <div class="visual-icon">
+
+                            ❤️
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <h3>
+
+                            Interactive Surprise Websites
+
+                        </h3>
+
+
+                        <p>
+
+                            Interactive birthday and anniversary
+                            experiences with animations, music,
+                            effects and custom interactions.
+
+                        </p>
+
+
+                        <div class="project-tech">
+
+                            <span>
+                                HTML
+                            </span>
+
+                            <span>
+                                CSS
+                            </span>
+
+                            <span>
+                                JS
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="project-view"
+                            data-link="https://damodar101.github.io/Amrit-special/">
+
+                            VIEW PROJECT
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 DESIGN CONTENT
+            ========================================== -->
+
+            <div
+                class="portfolio-content"
+                id="design-content">
+
+
+                <!-- PROJECT 01 -->
+
+                <div class="project-card">
+
+                    <div class="project-top">
+
+                        <span class="project-number">
+
+                            01
+
+                        </span>
+
+
+                        <span class="project-status">
+
+                            UI / UX
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-visual">
+
+                        <div class="visual-grid"></div>
+
+                        <div class="visual-glow"></div>
+
+                        <div class="visual-icon">
+
+                            🎨
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <h3>
+
+                            Modern UI / UX
+
+                        </h3>
+
+
+                        <p>
+
+                            Clean, modern and interactive interfaces
+                            focused on visual hierarchy, usability
+                            and premium presentation.
+
+                        </p>
+
+
+                        <div class="project-tech">
+
+                            <span>
+                                UI / UX
+                            </span>
+
+                            <span>
+                                WEB DESIGN
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="project-view"
+                            data-link="#">
+
+                            VIEW WORK
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 02 -->
+
+                <div class="project-card">
+
+                    <div class="project-top">
+
+                        <span class="project-number">
+
+                            02
+
+                        </span>
+
+
+                        <span class="project-status">
+
+                            DESIGN
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-visual">
+
+                        <div class="visual-grid"></div>
+
+                        <div class="visual-glow"></div>
+
+                        <div class="visual-icon">
+
+                            ◇
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <h3>
+
+                            Glassmorphism Interfaces
+
+                        </h3>
+
+
+                        <p>
+
+                            Dark cinematic interfaces using glass
+                            surfaces, depth, glow and smooth motion.
+
+                        </p>
+
+
+                        <div class="project-tech">
+
+                            <span>
+                                GLASS
+                            </span>
+
+                            <span>
+                                UI DESIGN
+                            </span>
+
+                            <span>
+                                MOTION
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="project-view"
+                            data-link="#">
+
+                            VIEW WORK
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 VIDEO CONTENT
+            ========================================== -->
+
+            <div
+                class="portfolio-content"
+                id="video-content">
+
+
+                <!-- PROJECT 01 -->
+
+                <div class="project-card">
+
+                    <div class="project-top">
+
+                        <span class="project-number">
+
+                            01
+
+                        </span>
+
+
+                        <span class="project-status">
+
+                            EDITING
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-visual">
+
+                        <div class="visual-grid"></div>
+
+                        <div class="visual-glow"></div>
+
+                        <div class="visual-icon">
+
+                            🎬
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <h3>
+
+                            Video Editing
+
+                        </h3>
+
+
+                        <p>
+
+                            Creative video editing using CapCut,
+                            including transitions, effects,
+                            pacing and cinematic presentation.
+
+                        </p>
+
+
+                        <div class="project-tech">
+
+                            <span>
+                                CAPCUT
+                            </span>
+
+                            <span>
+                                EDITING
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="project-view"
+                            data-link="#">
+
+                            VIEW WORK
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 02 -->
+
+                <div class="project-card">
+
+                    <div class="project-top">
+
+                        <span class="project-number">
+
+                            02
+
+                        </span>
+
+
+                        <span class="project-status">
+
+                            CREATIVE
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-visual">
+
+                        <div class="visual-grid"></div>
+
+                        <div class="visual-glow"></div>
+
+                        <div class="visual-icon">
+
+                            ✦
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <h3>
+
+                            Creative Edits
+
+                        </h3>
+
+
+                        <p>
+
+                            Short-form visual edits focused on
+                            storytelling, music synchronization
+                            and visual impact.
+
+                        </p>
+
+
+                        <div class="project-tech">
+
+                            <span>
+                                CAPCUT
+                            </span>
+
+                            <span>
+                                STORYTELLING
+                            </span>
+
+                            <span>
+                                VISUALS
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="project-view"
+                            data-link="#">
+
+                            VIEW WORK
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 
 </body>
+
 </html>
