@@ -1,0 +1,1000 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Damodar Subedi | Personal Website</title>
+  <meta name="description" content="Official personal website of Damodar Subedi, a BCA student from Nepal interested in web development, programming, technology and creative video editing.">
+  <meta name="keywords" content="Damodar Subedi, Damodar Subedi Nepal, Damodar, BCA student, Nepal, web development, HTML, CSS, JavaScript, video editing">
+  <meta name="author" content="Damodar Subedi">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#f8faff">
+
+  <link rel="canonical" href="https://damodarsubedi.com.np/">
+  <link rel="icon" type="image/png" href="avatar.png">
+  <link rel="apple-touch-icon" href="avatar.png">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Damodar Subedi | Personal Website">
+  <meta property="og:description" content="The personal website of Damodar Subedi — BCA student, technology enthusiast and creative learner.">
+  <meta property="og:url" content="https://damodarsubedi.com.np/">
+  <meta property="og:image" content="https://damodarsubedi.com.np/avatar.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Damodar Subedi">
+  <meta name="twitter:description" content="BCA student from Nepal passionate about technology and creativity.">
+  <meta name="twitter:image" content="https://damodarsubedi.com.np/avatar.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Damodar Subedi",
+    "url": "https://damodarsubedi.com.np/",
+    "image": "https://damodarsubedi.com.np/avatar.png",
+    "email": "hello@damodarsubedi.com.np",
+    "description": "Damodar Subedi is a BCA student from Nepal interested in web development, technology and video editing.",
+    "sameAs": [
+      "https://github.com/damodar101",
+      "https://www.instagram.com/nee_rajjjjjjjjjjjj/"
+    ],
+    "knowsAbout": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Web Development",
+      "CapCut Video Editing",
+      "Creative Design"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8faff;
+      --white: #ffffff;
+      --text: #20243a;
+      --muted: #737b91;
+      --blue: #526ef5;
+      --purple: #9274ed;
+      --border: #e9ebf5;
+      --soft: #f0f2ff;
+      --gradient: linear-gradient(110deg, #526ef5, #9873eb);
+      --shadow: 0 15px 45px rgba(46, 63, 120, .07);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
+
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: .22;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .orb-one {
+      width: 330px;
+      height: 330px;
+      background: #c9d2ff;
+      top: 70px;
+      right: -140px;
+    }
+
+    .orb-two {
+      width: 300px;
+      height: 300px;
+      background: #e5d5ff;
+      top: 850px;
+      left: -170px;
+    }
+
+    /* Navigation */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248,250,255,.9);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-links .contact-link {
+      background: var(--gradient);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--text);
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      padding: 95px 0;
+    }
+
+    .hero-content {
+      max-width: 790px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 15px;
+      border-radius: 30px;
+      border: 1px solid #e2e6ff;
+      background: white;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin-bottom: 27px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #45c990;
+      border-radius: 50%;
+    }
+
+    h1, h2, h3 {
+      font-family: "Space Grotesk", sans-serif;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(46px, 8vw, 80px);
+      letter-spacing: -4px;
+      margin-bottom: 24px;
+    }
+
+    .hero-description {
+      max-width: 620px;
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .profile-avatar {
+      width: 135px;
+      height: 135px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid white;
+      margin-bottom: 27px;
+      box-shadow: 0 10px 35px rgba(82,110,245,.2);
+      background: #25254d;
+    }
+
+    .profile-avatar img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 23px;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--gradient);
+      box-shadow: 0 7px 20px rgba(82,110,245,.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(82,110,245,.25);
+    }
+
+    .btn-secondary {
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-4px);
+      border-color: #b8c2ff;
+    }
+
+    .hero-info {
+      display: flex;
+      gap: 45px;
+      flex-wrap: wrap;
+      margin-top: 65px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
+    }
+
+    .info-item strong {
+      display: block;
+      font-family: "Space Grotesk";
+      font-size: 19px;
+    }
+
+    .info-item span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* Sections */
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 13px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 44px);
+      letter-spacing: -1.5px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 580px;
+      margin-top: 13px;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 17px;
+    }
+
+    .about-card {
+      background: white;
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .initial {
+      font-family: "Space Grotesk";
+      font-size: 95px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .about-card h3 {
+      font-size: 21px;
+      margin-top: 18px;
+    }
+
+    .about-card > p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .details {
+      border-top: 1px solid var(--border);
+      margin-top: 25px;
+      padding-top: 17px;
+    }
+
+    .detail {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 10px 0;
+      font-size: 12px;
+    }
+
+    .detail span {
+      color: var(--muted);
+    }
+
+    .detail strong {
+      text-align: right;
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(46,63,120,.035);
+      transition: .3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: #c8d0ff;
+    }
+
+    .skill-top {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 13px;
+    }
+
+    .skill-icon {
+      width: 47px;
+      height: 47px;
+      display: grid;
+      place-items: center;
+      background: var(--soft);
+      border-radius: 13px;
+      font-size: 22px;
+    }
+
+    .skill-card h3 {
+      font-size: 17px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      color: var(--blue);
+      background: #f0f2ff;
+      border-radius: 20px;
+      padding: 5px 11px;
+      margin-top: 16px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .8px;
+    }
+
+    /* Learning */
+
+    .journey-box {
+      background: white;
+      padding: 38px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .journey-box h3 {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .journey-box p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 760px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .tag {
+      color: #5669c8;
+      background: #f0f2ff;
+      border: 1px solid #e4e8ff;
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* Contact */
+
+    .contact-box {
+      padding: 58px 28px;
+      text-align: center;
+      border: 1px solid #e2e6ff;
+      border-radius: 20px;
+      background: linear-gradient(130deg, #eef1ff, #f9f5ff, #edf5ff);
+    }
+
+    .contact-box h2 {
+      font-size: clamp(30px, 5vw, 43px);
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 490px;
+      margin: 0 auto 26px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .social-links a {
+      padding: 9px 16px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .social-links a:hover {
+      color: var(--blue);
+      border-color: #b8c5ff;
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 26px 0;
+      border-top: 1px solid var(--border);
+      background: white;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    footer p, footer a {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    footer a:hover {
+      color: var(--blue);
+    }
+
+    /* Animation */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+
+    @media(max-width: 760px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        padding: 24px 5%;
+        background: white;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 85px 0 65px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-info {
+        gap: 25px;
+        margin-top: 50px;
+      }
+
+      .journey-box {
+        padding: 26px;
+      }
+    }
+
+    @media(prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="orb orb-one"></div>
+  <div class="orb orb-two"></div>
+
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">D<span>.</span></a>
+
+      <button class="menu-btn" id="menuBtn"
+        aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#journey">My Journey</a></li>
+        <li><a href="#contact" class="contact-link">Contact ↗</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HOME -->
+    <section class="hero container" id="home">
+      <div class="hero-content reveal">
+
+        <div class="profile-avatar">
+          <img src="avatar.png" alt="Illustrated avatar representing Damodar Subedi">
+        </div>
+
+        <div class="eyebrow">
+          <span class="dot"></span>
+          BCA STUDENT · NEPAL
+        </div>
+
+        <h1>
+          Hello, I'm<br>
+          <span class="gradient-text">Damodar Subedi.</span>
+        </h1>
+
+        <p class="hero-description">
+          A curious mind with a passion for technology and creativity.
+          I'm exploring web development, learning programming, and
+          developing my creative skills in video editing.
+          Every day is another opportunity to learn and grow.
+        </p>
+
+        <div class="buttons">
+          <a href="#skills" class="btn btn-primary">Explore My Skills ↗</a>
+          <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+        </div>
+
+        <div class="hero-info">
+          <div class="info-item">
+            <strong>HTML & CSS</strong>
+            <span>Web Development</span>
+          </div>
+          <div class="info-item">
+            <strong>JavaScript</strong>
+            <span>Programming</span>
+          </div>
+          <div class="info-item">
+            <strong>CapCut</strong>
+            <span>Video Editing</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <div class="section-label">01 / ABOUT ME</div>
+          <h2 class="section-title">
+            A little about <span class="gradient-text">myself.</span>
+          </h2>
+        </div>
+
+        <div class="about-grid">
+
+          <div class="about-copy reveal">
+            <p>
+              I'm Damodar Subedi, a Bachelor of Computer Applications
+              (BCA) student from Nepal. I have a strong interest in
+              technology, programming, and digital creativity.
+            </p>
+
+            <p>
+              I enjoy exploring how websites are built, understanding
+              programming concepts, and creating clean and attractive
+              digital experiences.
+            </p>
+
+            <p>
+              Beyond coding, I also enjoy video editing. I'm currently
+              developing my CapCut skills, experimenting with transitions,
+              effects, timing, and visual storytelling.
+            </p>
+
+            <p>
+              I don't believe learning has an endpoint. My aim is to keep
+              improving, gain practical knowledge, and become more
+              confident in my abilities.
+            </p>
+          </div>
+
+          <div class="about-card reveal">
+            <div class="initial gradient-text">D.</div>
+            <h3>Curious. Creative. Determined.</h3>
+            <p>Learning today, becoming better tomorrow.</p>
+
+            <div class="details">
+              <div class="detail">
+                <span>Full Name</span>
+                <strong>Damodar Subedi</strong>
+              </div>
+              <div class="detail">
+                <span>Education</span>
+                <strong>BCA Student</strong>
+              </div>
+              <div class="detail">
+                <span>Country</span>
+                <strong>Nepal</strong>
+              </div>
+              <div class="detail">
+                <span>Interests</span>
+                <strong>Technology & Creativity</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <div class="section-label">02 / MY SKILLS</div>
+          <h2 class="section-title">
+            Skills & <span class="gradient-text">interests.</span>
+          </h2>
+          <p class="section-description">
+            A combination of technical learning and creative exploration.
+            These are the areas I'm building my knowledge in.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+
+          <article class="skill-card reveal">
+            <div class="skill-top">
+              <div class="skill-icon">⌨️</div>
+              <h3>HTML</h3>
+            </div>
+            <p>
+              Understanding page structure, semantic elements,
+              forms, and the foundations of building websites.
+            </p>
+            <span class="skill-tag">WEB FUNDAMENTALS</span>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-top">
+              <div class="skill-icon">🎨</div>
+              <h3>CSS</h3>
+            </div>
+            <p>
+              Working with layouts, colors, typography, responsive
+              designs, and modern visual styling.
+            </p>
+            <span class="skill-tag">WEB DESIGN</span>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-top">
+              <div class="skill-icon">⚡</div>
+              <h3>JavaScript</h3>
+            </div>
+            <p>
+              Learning programming logic, functions, events,
+              DOM manipulation, and interactive web experiences.
+            </p>
+            <span class="skill-tag">PROGRAMMING</span>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-top">
+              <div class="skill-icon">🎬</div>
+              <h3>CapCut Video Editing</h3>
+            </div>
+            <p>
+              Intermediate-level editing with transitions,
+              effects, music synchronization, and storytelling.
+            </p>
+            <span class="skill-tag">INTERMEDIATE</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LEARNING JOURNEY -->
+    <section id="journey">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <div class="section-label">03 / MY MINDSET</div>
+          <h2 class="section-title">
+            Always learning, <span class="gradient-text">always growing.</span>
+          </h2>
+        </div>
+
+        <div class="journey-box reveal">
+          <h3>My journey is still unfolding.</h3>
+
+          <p>
+            As a BCA student, I'm building my foundation in computer
+            science while exploring the creative side of technology.
+            I enjoy challenging myself with new concepts, improving
+            my problem-solving abilities, and learning through practice.
+            I value consistency over perfection and believe that small
+            improvements every day can lead to meaningful progress.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Continuous Learning</span>
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Creativity</span>
+            <span class="tag">Consistency</span>
+            <span class="tag">Curiosity</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+
+        <div class="contact-box reveal">
+          <div class="section-label">04 / LET'S CONNECT</div>
+
+          <h2>
+            Let's connect and <span class="gradient-text">say hello.</span>
+          </h2>
+
+          <p>
+            Whether it's a conversation about technology, creativity,
+            learning, or a new opportunity, I'd be happy to connect.
+          </p>
+
+          <a href="mailto:hello@damodarsubedi.com.np"
+             class="btn btn-primary">
+            Email Me ↗
+          </a>
+
+          <div class="social-links">
+            <a href="https://github.com/damodar101"
+               target="_blank" rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+
+            <a href="https://www.instagram.com/nee_rajjjjjjjjjjjj/"
+               target="_blank" rel="noopener noreferrer">
+              Instagram ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Damodar Subedi. All rights reserved.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      const opened = navLinks.classList.toggle("open");
+      menuBtn.textContent = opened ? "✕" : "☰";
+      menuBtn.setAttribute("aria-expanded", opened);
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.textContent = "☰";
+        menuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      observer.observe(element);
+    });
+
+    // Footer year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
